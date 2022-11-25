@@ -1,0 +1,127 @@
+[
+  {
+    "sub_typ_id": 91,
+    "sub_typ_nm": "General",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 83,
+    "sub_typ_nm": "Renewal",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 102,
+    "sub_typ_nm": "REQUIREMENT FORMS TESTING 1",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 106,
+    "sub_typ_nm": "Test Submission Type1",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 103,
+    "sub_typ_nm": "REQUIREMENT FORMS TESTING 2",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 78,
+    "sub_typ_nm": "Label Change",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 84,
+    "sub_typ_nm": "Source Change/Add",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 85,
+    "sub_typ_nm": "Special License",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 80,
+    "sub_typ_nm": "Molecular Registration",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 94,
+    "sub_typ_nm": "Testing 26April 02",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 90,
+    "sub_typ_nm": "Clinical Trial Materials",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 82,
+    "sub_typ_nm": "New Product",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 87,
+    "sub_typ_nm": "Manufacturing Change",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 86,
+    "sub_typ_nm": "Tender Bid",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 81,
+    "sub_typ_nm": "New Indication",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 79,
+    "sub_typ_nm": "Line Extension",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 93,
+    "sub_typ_nm": "Testing April 23 02",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 95,
+    "sub_typ_nm": "Test 30 April",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 88,
+    "sub_typ_nm": "Manufacturing Site Registration",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 92,
+    "sub_typ_nm": "Testing April 23 4",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 89,
+    "sub_typ_nm": "Marketing Authorization Transfer",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 100,
+    "sub_typ_nm": "5521--",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 105,
+    "sub_typ_nm": "test1",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 101,
+    "sub_typ_nm": "050521",
+    "is_active": false
+  },
+  {
+    "sub_typ_id": 104,
+    "sub_typ_nm": "Submission Type",
+    "is_active": false
+  }
+]

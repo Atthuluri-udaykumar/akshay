@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es6",
+    "moduleResolution": "node",
+    "lib": [
+      "es6",
+      "dom",
+      "dom.iterable"
+    ],
+    "sourceMap": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "outDir": "./dist/",
+    "rootDir": "./"
+  },
+  "exclude": [
+    "node_modules","dist", "build"
+  ]
+}

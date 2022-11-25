@@ -1,0 +1,76 @@
+{
+  "data": {
+    "qstn_txt": [
+      {
+        "REQ_QSTN_LST_TXT_ID": 3,
+        "Text": "drop down 1",
+        "IS_ACTIVE": true
+      },
+      {
+        "REQ_QSTN_LST_TXT_ID": 4,
+        "Text": "drop down 2",
+        "IS_ACTIVE": true
+      },
+      {
+        "REQ_QSTN_LST_TXT_ID": 5,
+        "Text": "drop down 3",
+        "IS_ACTIVE": true
+      },
+      {
+        "REQ_QSTN_LST_TXT_ID": 6,
+        "Text": "drop down 4",
+        "IS_ACTIVE": false
+      }
+    ],
+    "SUBMISSION_TYPE": [
+      {
+        "SUB_TYP_ID": 1,
+        "SUB_TYP_NM": "Label Change",
+        "OPERATOR": "OR"
+      },
+      {
+        "SUB_TYP_ID": 3,
+        "SUB_TYP_NM": "Molecular Registration",
+        "OPERATOR": "OR"
+      }
+    ],
+    "PRODUCT_TYPE": [
+      {
+        "PRODUCT_TYPE_ID": 1,
+        "PRODUCT_TYPE_NM": "Biological/Biotech",
+        "OPERATOR": "OR"
+      }
+    ],
+
+    "DOSSIER_LST": [
+      {
+        "DOSSIER_LST_ID": 176,
+        "DOSSIER_LST_NM": "3.2.S Drug substance [name, manufacturer]",
+        "OPERATOR": "OR"
+      }
+    ],
+
+    "REQ_CAT_LST": [
+      {
+        "REQ_CAT_LST_ID": 1,
+        "REQ_CAT_LST_NM": "Label Change",
+        "OPERATOR": "OR"
+      }
+    ],
+
+    "GEN_REQ_CAT_LST": [
+      {
+        "GEN_REQ_CAT_LST_ID": 1,
+        "GEN_REQ_CAT_LST_NM": "FEES"
+      }
+    ],
+    "countries": [
+      {
+        "country_id": 1
+      },
+      {
+        "country_id": 2
+      }
+    ]
+  }
+}

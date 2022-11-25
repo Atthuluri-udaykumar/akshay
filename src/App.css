@@ -1,0 +1,62 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+@keyframes spinreverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
+.spinreverse {
+  position: absolute;
+  animation-name: spinreverse;
+  animation-duration: 20000ms;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+.mv-5 {
+  margin: 0.5% 0 !important;
+}
+
+.mv-15 {
+  margin: 1.5% 0 !important;
+}
+
+.mv-35 {
+  margin: 3.5% 0 !important;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: space-between;
+  background-color: lightgrey;
+}
+
+ol {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-separator {
+  color: #333;
+  margin: auto 6px;
+  user-select: none;
+}
+
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
