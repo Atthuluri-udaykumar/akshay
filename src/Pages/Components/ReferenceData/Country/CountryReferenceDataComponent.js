@@ -63,8 +63,8 @@ const CountryReferenceDataComponent = (props) => {
     countryName: "",
     countryDisplayName: "",
     comment: "",
-    isActive : false,
-    id : null
+    isActive: false,
+    id: null
   });
 
   const { countryName, countryDisplayName, comment } = formData;
@@ -103,13 +103,12 @@ const CountryReferenceDataComponent = (props) => {
     setIsDialogOpen(false);
   }
 
-  const handleSave = async () => {
-    await ReferenceDataAPI.updateCountryDisplay(formData.id, formData.countryName, formData.countryDisplayName, formData.comment, formData.isActive);
+  const handleSave = async (item) => {
+    await ReferenceDataAPI.updateCountryDisplay(item);
     setIsDialogOpen(false)
     getData()
     enqueueSnackbar(
-      `Successfully updated ${succeeded.length} item${
-        succeeded.length > 1 ? "s" : ""
+      `Successfully updated ${succeeded.length} item${succeeded.length > 1 ? "s" : ""
       }`,
       { variant: "success" }
     );
@@ -123,21 +122,21 @@ const CountryReferenceDataComponent = (props) => {
       }
 
       setUpdatingRecords(true);
-
-      const promises = updatedItems.map(async (item) => {
-        try {
-          return {
-            id: item[internalIdField],
-            result: await handleSave(item, item, false),
-          };
-        } catch (error) {
-          devLogError(error);
-          return {
-            error,
-            id: item[internalIdField],
-          };
-        }
-      });
+      const promises =  await handleSave(updatedItems)
+      // const promises = updatedItems.map(async (item) => {
+      //   try {
+      //     return {
+      //       id: item[internalIdField],
+      //       result: await handleSave(item, item, false),
+      //     };
+      //   } catch (error) {
+      //     devLogError(error);
+      //     return {
+      //       error,
+      //       id: item[internalIdField],
+      //     };
+      //   }
+      // });
 
       const succeeded = [];
       const failed = [];
@@ -157,8 +156,7 @@ const CountryReferenceDataComponent = (props) => {
 
       if (succeeded.length > 0) {
         enqueueSnackbar(
-          `Successfully updated ${succeeded.length} item${
-            succeeded.length > 1 ? "s" : ""
+          `Successfully updated ${succeeded.length} item${succeeded.length > 1 ? "s" : ""
           }`,
           { variant: "success" }
         );
@@ -179,15 +177,15 @@ const CountryReferenceDataComponent = (props) => {
     getData();
   }, [getData]);
 
-  const handleEditItem = (item) =>{
+  const handleEditItem = (item) => {
     setEditingItem(item);
     setFormData({
       ...formData,
-      countryName :item.optionText,
-      countryDisplayName:item.countryDisplayName,
-      comment:item.comment,
-      isActive : item.isActive,
-      id : item.optionId
+      countryName: item.optionText,
+      countryDisplayName: item.countryDisplayName,
+      comment: item.comment,
+      isActive: item.isActive,
+      id: item.optionId
     })
     setIsDialogOpen(true);
   }
@@ -199,57 +197,57 @@ const CountryReferenceDataComponent = (props) => {
     return <LoadErrorComponent message={loadItemsError} reloadData={getData} />;
   }
   return (
-    <div>  
-        <Dialog open={isDialogOpen} onClose={handleClose} >
-          <DialogTitle>Country</DialogTitle>
-          <DialogContent>
-            <DialogContentText>
-            </DialogContentText>
-            <TextInput
-              label="Country Name"
-              placeholder="Country Name"
-              required={true}
-              value={countryName}
-              onChange={(value) => setFormData({
-                ...formData,
-                "countryName": value
-              })}
-              error={errorMessages.countryName.toggle}
-              helperText={errorMessages.countryName.message}
-              disabled={true}
-            />
+    <div>
+      <Dialog open={isDialogOpen} onClose={handleClose} >
+        <DialogTitle>Country</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+          </DialogContentText>
+          <TextInput
+            label="Country Name"
+            placeholder="Country Name"
+            required={true}
+            value={countryName}
+            onChange={(value) => setFormData({
+              ...formData,
+              "countryName": value
+            })}
+            error={errorMessages.countryName.toggle}
+            helperText={errorMessages.countryName.message}
+            disabled={true}
+          />
 
-            <TextInput
-              label="Country Display Name"
-              placeholder="Country Display Name"
-              required={true}
-              value={countryDisplayName}
-              onChange={(value) => setFormData({
-                ...formData,
-                "countryDisplayName": value
-              })}
-              error={errorMessages.countryDisplayName.toggle}
-              helperText={errorMessages.countryDisplayName.message}
-            />
+          <TextInput
+            label="Country Display Name"
+            placeholder="Country Display Name"
+            required={true}
+            value={countryDisplayName}
+            onChange={(value) => setFormData({
+              ...formData,
+              "countryDisplayName": value
+            })}
+            error={errorMessages.countryDisplayName.toggle}
+            helperText={errorMessages.countryDisplayName.message}
+          />
 
-            <TextInput
-              label="Comment"
-              placeholder="Comment"
-              required={true}
-              value={comment}
-              onChange={(value) => setFormData({
-                ...formData,
-                "comment": value
-              })}
-              error={errorMessages.comment.toggle}
-              helperText={errorMessages.comment.message}
-            />
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose}>Cancel</Button>
-            <Button onClick={handleSave}>Save</Button>
-          </DialogActions>
-        </Dialog>
+          <TextInput
+            label="Comment"
+            placeholder="Comment"
+            required={true}
+            value={comment}
+            onChange={(value) => setFormData({
+              ...formData,
+              "comment": value
+            })}
+            error={errorMessages.comment.toggle}
+            helperText={errorMessages.comment.message}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleSave}>Save</Button>
+        </DialogActions>
+      </Dialog>
 
       <div className={classes.transferListContainer}>
         <TransferList
@@ -259,6 +257,7 @@ const CountryReferenceDataComponent = (props) => {
           disabled={updatingRecords}
           handleUpdateRecords={updateRecords}
           toggleEditing={(item) => handleEditItem(item)}
+          type={'country'}
         />
       </div>
     </div>

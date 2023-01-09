@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   side: {
     display: "flex",
     flex: 1,
-    height: "100%",
+    height: "100vh",
     overflow: "hidden",
   },
   controlsContainer: {
@@ -44,6 +44,7 @@ export default function TransferList(props) {
     handleUpdateRecords,
     toggleEditing,
     render,
+    type=''
   } = props;
 
   const classes = useStyles();
@@ -107,7 +108,6 @@ export default function TransferList(props) {
           isActive: active,
         };
       });
-
       handleUpdateRecords(newList);
       setCheckedList([]);
     }

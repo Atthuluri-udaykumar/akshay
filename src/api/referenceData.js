@@ -178,16 +178,29 @@ async function getAllActiveCountries() {
   return ReferenceDataConverter.countryAPIDataToAppData(result.records);
 }
 
-async function updateCountryDisplay(countryId, countryName, countryDisplayName,comment, active ) {
+async function updateCountryDisplay(countryList) {
     const params = new URLSearchParams();
-    params.set("country_id", countryId);
-    params.set("country_nm", countryName);
-    params.set("country_display_nm", countryDisplayName);
-    params.set("country_comment", comment);
-    params.set("active", active);
+    // params.set("country_id", countryId);
+    // params.set("country_nm", countryName);
+    // params.set("country_display_nm", countryDisplayName);
+    // params.set("country_comment", comment);
+    // params.set("active", active);
     params.set("lilly_id", getLillyIDForAPI());
-    const path = `countries/updatecountrybyid?${params.toString()}`;
-    const response = await API.post(apiBase.apiName, path);
+    let countries=countryList.map(val=>{
+      return {
+        country_id:val.optionId,
+        is_active:val.isActive
+      }
+    })
+
+    const body = {
+      body: {
+        countries
+      },
+    };
+
+    const path = `countries/changecountrystatus?${params.toString()}`;
+    const response = await API.post(apiBase.apiName, path,body);
 }
 
 export default class ReferenceDataAPI {
