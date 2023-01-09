@@ -50,10 +50,12 @@ async function isQuestionInAForm(templateId) {
 async function saveQuestionTemplate(form) {
   const params = new URLSearchParams();
   params.set("req_typ", form.questionText);
-  params.set("req_info", form.questionInfo);
   params.set("req_question_type_id", form.questionTypeId);
   params.set("custom_allowed", form.customAllowed);
   params.set("lilly_id", getLillyIDForAPI());
+  params.set("is_on_form", true);
+  params.set("has_answers", false);
+  params.set("tooltip", form.questionInfo);
 
   const fullURL = `${saveQuestionURL}?${params.toString()}`;
   const apiForm = QuestionTemplateConverter.questionAppDataToAPIData(form);
@@ -148,10 +150,12 @@ async function updateQuestionTemplate(form) {
   const params = new URLSearchParams();
   params.set("sub_id", form.questionTemplateId);
   params.set("req_type", form.questionText);
-  params.set("req_info", form.questionInfo);
   params.set("req_question_type_id", form.questionTypeId);
   params.set("active", true);
   params.set("lilly_id", getLillyIDForAPI());
+  params.set("is_on_form", true);
+  params.set("has_answers", false);
+  params.set("tooltip", form.questionInfo);
 
   const fullURL = `${updateQuestionURL}?${params.toString()}`;
   const apiForm = QuestionTemplateConverter.questionAppDataToAPIData(form);

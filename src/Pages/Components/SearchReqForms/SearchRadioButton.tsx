@@ -61,13 +61,13 @@ const SearchRadioButtons: React.FC<ISearchRadioButoonsProps> = (props) => {
             control={<Radio color="primary" />}
             label={"Requirements Search"}
           />
-          <FormControlLabel
+          {/* <FormControlLabel
             // className={classes.formName}
             key={"b"}
             value={SearchRadioButtonsValue.GuidanceDocument}
             control={<Radio color="primary" />}
             label={"Guidance Documents"}
-          />
+          /> */}
           {canEditForms && (
             <FormControlLabel
               // className={classes.formName}

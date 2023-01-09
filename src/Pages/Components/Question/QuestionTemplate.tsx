@@ -102,6 +102,8 @@ export const QuestionTemplate = (props) => {
         ? await QuestionTemplateAPI.getSingleQuestion(questionTemplateId)
         : undefined;
       if (questionResult) {
+        console.log({questionResult});
+        
         setSelectedOptions(questionResult as any);
         setFixedSelectedOptions(questionResult as any);
         setNumberOfOptions(

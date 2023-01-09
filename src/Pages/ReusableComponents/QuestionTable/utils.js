@@ -461,6 +461,7 @@ function questionAPIDataToAppData(apiData) {
     questionTypeId: apiData.req_question_type_lst_id,
     questionTypeName: apiData.req_question_type_nm,
     questionText: apiData.req_type,
+    questionInfo:apiData.tooltip,
     questionTemplateId: apiData.submission_req_tmplt_id,
     options: options.map((option) => {
       return {
@@ -499,6 +500,7 @@ function singleQuestionAPIDataToAppData(apiData) {
 
   return {
     questionText: apiData.req_type,
+    questionInfo:apiData.tooltip,
     questionType: {
       optionId: apiData.req_question_type_lst_id,
       optionText: apiData.req_question_type_nm,

@@ -79,18 +79,18 @@ interface ISidebarItem {
       icon: <SearchIcon />,
       groups: [GenericUserGroups.Admin, GenericUserGroups.User],
     },
-    {
-      to: "/dashboard",
-      label: "Dashboard",
-      icon: <DashboardIcon />,
-      groups: [GenericUserGroups.Admin, GenericUserGroups.User],
-    },
-    {
-      to: "/mywork",
-      label: "My Work",
-      icon: <PersonIcon />,
-      groups: [GenericUserGroups.Admin, GenericUserGroups.User],
-    },
+    // {
+    //   to: "/dashboard",
+    //   label: "Dashboard",
+    //   icon: <DashboardIcon />,
+    //   groups: [GenericUserGroups.Admin, GenericUserGroups.User],
+    // },
+    // {
+    //   to: "/mywork",
+    //   label: "My Work",
+    //   icon: <PersonIcon />,
+    //   groups: [GenericUserGroups.Admin, GenericUserGroups.User],
+    // },
     {
       to: "/assignedtasks",
       label: "Tasks",
@@ -156,6 +156,7 @@ interface ISidebarItem {
     const [alertOpen, setAlertOpen] = React.useState(false);
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const openDropdown = Boolean(anchorEl);
+    const navigate=useNavigate()
     const showDropdown = (event: React.MouseEvent<HTMLElement>) => {
       setAnchorEl(event.currentTarget);
     };
@@ -197,7 +198,9 @@ interface ISidebarItem {
         () => filterItemsUsingUserGroups(adminSideBarItems, userGroups),
         [userGroups]
       );
-    
+    const onLogoClick=()=>{
+      navigate('/')
+    }
   
   return (
     <Box sx={{ display: 'flex' }}>
@@ -226,6 +229,8 @@ interface ISidebarItem {
                     <ChevronLeftIcon />
                 {/* </Tooltip> */}
                 </IconButton>
+                <div style={{cursor:'pointer'}} onClick={onLogoClick}>
+
                 <Box
                     component="img"
                     sx={{
@@ -246,6 +251,7 @@ interface ISidebarItem {
                     alt="Logo"
                     src={Logo}
                 />
+                </div>
             </div>
             <div>
                 <IconButton edge="end" color="inherit" aria-label="close">

@@ -23,6 +23,7 @@ export interface IQuestionTemplate {
   questionTypeId: number;
   questionTypeName: string;
   questionText: string;
+  questionInfo: string;
   questionTemplateId: number;
   options?: IQuestionTemplateOption[];
   productTypes: IOption[];
