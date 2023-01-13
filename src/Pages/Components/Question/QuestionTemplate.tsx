@@ -379,9 +379,6 @@ export const QuestionTemplate = (props) => {
       /* edit question */
       if (questionTemplateId) {
 
-        // Check if Question is Used in Form
-        const isQuestionOnForm = await QuestionTemplateAPI.isQuestionInAForm(questionTemplateId);
-        if (isQuestionOnForm) {
           const response = await confirm(
             `This question is part of an existing form, do you wish to continue with this edit?`,
             "alert"
@@ -398,8 +395,7 @@ export const QuestionTemplate = (props) => {
             setButtonLoader(false);
             return
           }
-        }
-
+        
       }
       /* end edit question */
 

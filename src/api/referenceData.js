@@ -201,6 +201,7 @@ async function updateCountryDisplay(countryList) {
 
     const path = `countries/changecountrystatus?${params.toString()}`;
     const response = await API.post(apiBase.apiName, path,body);
+    return response;
 }
 
 export default class ReferenceDataAPI {

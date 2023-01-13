@@ -43,7 +43,7 @@ async function isQuestionInAForm(templateId) {
     apiBase.apiName,
     `subreqtemplate/isquestioninaform?${params.toString()}`
   );
-
+    
   return result;
 }
 
